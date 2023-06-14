@@ -13,8 +13,8 @@ Container bottomBar (BuildContext context){
       ElevatedButton(
           onPressed: () => goPage(context,""), child: Icon(Icons.home)),
       ElevatedButton(
-          onPressed: () => goPage(context,"advert"),
-          child: Icon(Icons.add_box)),
+          onPressed: () => goPage(context,"add"),
+          child: Icon(Icons.add_box_outlined)),
       ElevatedButton(
           onPressed: () => goPage(context, "pet"),
           child: Icon(Icons.account_circle_rounded)),

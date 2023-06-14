@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rumeysa_21070690018_finish_project/screen/add.pet.screen.dart';
 import 'package:rumeysa_21070690018_finish_project/screen/advert.screen.dart';
 import 'package:rumeysa_21070690018_finish_project/screen/home.screen.dart';
 import 'package:rumeysa_21070690018_finish_project/screen/login.screen.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomeScreen(title: 'Home Page'),
         '/login': (context) => const LoginScreen(title: "login"),
         '/advert': (context) => const AdvertScreen(title: "Advert"),
-        '/pet': (context) => const petInfoScreen(title: "petInfo"),
+        '/add': (context) =>  AddPetScreen(title: "add"),
+        '/pet': (context) =>  petInfoScreen(title: "pet"),
       },
       initialRoute: "/",
       title: 'Flutter App',

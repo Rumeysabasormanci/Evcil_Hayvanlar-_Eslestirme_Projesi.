@@ -25,7 +25,7 @@ class _PostCardState extends State<PostCard> {
     return Column(
       children: [
         Container(
-          width: 300,
+          width: 290,
           height: 300,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
@@ -39,19 +39,25 @@ class _PostCardState extends State<PostCard> {
             ),
           ),
         ),
-        SizedBox(height: 45),
+        SizedBox(height: 38),
         Text(
-          'EN UYGUN EŞİ BUL',
+          'EN UYGUN PATİYİ BUL',
           style: TextStyle(
             fontSize: 26,
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w800,
           ),
         ),
-        SizedBox(height: 65),
-        ElevatedButton(
-          onPressed: () => goPage(context,"advert"),
-          child: Text('KEŞFET'),
-        ),
+        Padding(
+
+        padding: EdgeInsets.only(top: 59),
+        child: SizedBox(
+          height: 100,
+          width: 200,
+          child: ElevatedButton(
+            onPressed: () => goPage(context,"advert"),
+            child: Text('KEŞFET',textAlign: TextAlign.center,),
+          ),
+        ),),
       ],
     );
   }

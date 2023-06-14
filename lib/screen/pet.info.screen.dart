@@ -53,3 +53,4 @@ class _petInfoScreenState extends State<petInfoScreen> {
         bottomNavigationBar: bottomBar(context));
   }
 }
+ 
