@@ -55,7 +55,7 @@ class _PostCardState extends State<PostCard> {
           width: 200,
           child: ElevatedButton(
             onPressed: () => goPage(context,"advert"),
-            child: Text('KEŞFET',textAlign: TextAlign.center,),
+            child: Text('İLANLAR',textAlign: TextAlign.center,style: TextStyle(fontSize: 25)),
           ),
         ),),
       ],

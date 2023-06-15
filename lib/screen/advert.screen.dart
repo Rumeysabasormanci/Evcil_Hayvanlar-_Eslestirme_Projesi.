@@ -33,6 +33,7 @@ class _AdvertScreenState extends State<AdvertScreen> {
             cardAdvert(context,"name",12,"sdsad","dsasa"),
             cardAdvert(context,"name",12,"sdsad","dsasa"),
             cardAdvert(context,"name",12,"sdsad","dsasa"),
+
           ],
         )),
         bottomNavigationBar: bottomBar(context));

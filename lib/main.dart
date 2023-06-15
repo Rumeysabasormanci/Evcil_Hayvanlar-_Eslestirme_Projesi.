@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(title: "login"),
         '/advert': (context) => const AdvertScreen(title: "Advert"),
         '/add': (context) =>  AddPetScreen(title: "add"),
-        '/pet': (context) =>  petInfoScreen(title: "pet"),
+        '/pet': (context) => petInfoScreen(title: "pet", Age: 12, Kilo:13.0, Gender: "kadın",Genus: "golden",),
       },
       initialRoute: "/",
       title: 'Flutter App',
