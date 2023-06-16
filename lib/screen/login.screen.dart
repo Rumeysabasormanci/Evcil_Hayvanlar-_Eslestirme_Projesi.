@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key, required this.title});
   final String title;
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
-
-
 class _LoginScreenState extends State<LoginScreen> {
   late String _username="rumeysa";
   late String _password="123123";
@@ -19,7 +15,14 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         title: Text('Giriş Yap'),
       ),
-      body: Padding(
+      body: Container(
+    decoration: BoxDecoration(
+    image: DecorationImage(
+        image: AssetImage('assets/login5.jpeg'), // Resim yolunu güncelleyin
+    fit: BoxFit.cover,
+    ),
+    ),
+      child: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -52,6 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Text('Giriş Yap'),
             ),
           ],
+        ),
         ),
       ),
     );

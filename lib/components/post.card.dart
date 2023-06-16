@@ -51,7 +51,7 @@ class _PostCardState extends State<PostCard> {
 
         padding: EdgeInsets.only(top: 59),
         child: SizedBox(
-          height: 100,
+          height: 50,
           width: 200,
           child: ElevatedButton(
             onPressed: () => goPage(context,"advert"),

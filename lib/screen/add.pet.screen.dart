@@ -46,6 +46,7 @@ class AddPetScreenState extends State<AddPetScreen> {
       appBar: AppBar(
         title: Text('pet'),
       ),
+
       body: SingleChildScrollView (
       child:Padding(
         padding: EdgeInsets.all(16.0),

@@ -37,23 +37,31 @@ class _petInfoScreenState extends State<petInfoScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Image(image: AssetImage('assets/kopus.jpeg'),  height: 250, fit: BoxFit.cover),
-                const Text("ALEX", textAlign: TextAlign.center,style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold), ),
+                const Center(
+                  child: Text(
+                    "ALEX", textAlign: TextAlign.center, style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),),),
                 Container(
                   padding: const EdgeInsets.all(20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                       const Text("BİLGİLER",textAlign: TextAlign.start,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                       const Text("BİLGİLER",textAlign: TextAlign.start,style: TextStyle(fontSize: 25,fontWeight: FontWeight.w500),),
                        Text("Yaş: ${widget.Age}", style: TextStyle(fontSize: 18),),
                        Text("Kilo: ${widget.Kilo}", style: TextStyle(fontSize: 18),),
                        Text("Cins: ${widget.Genus}", style: TextStyle(fontSize: 18),),
                        Text("Cinsiyet: ${widget.Gender}", style: TextStyle(fontSize: 18),),
-                       const Text("İletişim Bilgileri",textAlign: TextAlign.start,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                       const Text("İletişim Bilgileri",textAlign: TextAlign.start,style: TextStyle(fontSize: 25,fontWeight: FontWeight.w500),),
                       ElevatedButton(onPressed: (){},
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20)
+                            )
+                          ),
                           child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(Icons.phone, size: 25, color: Colors.black),
-                          Text("İLETİŞİM"),
+                          Text("İLETİŞİM",style: TextStyle(fontSize: 20),),
                             ],
                           ))
                     ],
