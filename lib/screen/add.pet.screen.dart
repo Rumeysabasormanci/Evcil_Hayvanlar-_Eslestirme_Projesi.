@@ -21,7 +21,7 @@ class AddPetScreenState extends State<AddPetScreen> {
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      // Form verilerini kullanarak istediğiniz işlemleri yapabilirsiniz.
+      // Form verilerini kullanarak işlemleri yaptım.
       print('İsim: $_name');
       print('Yaş: $_age');
       print('Kilo: $_weight');
@@ -46,15 +46,29 @@ class AddPetScreenState extends State<AddPetScreen> {
       appBar: AppBar(
         title: Text('pet'),
       ),
+        bottomNavigationBar: bottomBar(context),
 
-      body: SingleChildScrollView (
+
+        body: Container(
+    decoration: BoxDecoration(
+    image: DecorationImage(
+
+    image: AssetImage('assets/addscreen.jpeg'), // Resim yolunu güncelleyin
+    fit: BoxFit.cover,
+    ),
+    ),
+
+      child: SingleChildScrollView (
       child:Padding(
         padding: EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
             children: [
-              ElevatedButton(onPressed: selectImage, child: Text("resim sec")),
+              SizedBox(
+                  height: 90, width: 90,
+                  child: ElevatedButton(onPressed: selectImage,
+                      child: Icon(Icons.image,size: 50,))),
               TextFormField(
                 decoration: InputDecoration(labelText: 'İsim'),
                 validator: (value) {
@@ -119,16 +133,17 @@ class AddPetScreenState extends State<AddPetScreen> {
                 onSaved: (value) => _bio = value,
               ),
               SizedBox(height: 16.0),
-              ElevatedButton(
-                onPressed: _submitForm,
-                child: Text('Paylaş'),
+              SizedBox(
+                height: 50, width: 180,
+                child: ElevatedButton(
+                  onPressed: _submitForm,
+                  child: Text('Paylaş',style: TextStyle(fontSize: 20),),
+                ),
               ),
             ],
           ),
         ),
-      )),
-        bottomNavigationBar: bottomBar(context)
-    );
+      ))));
   }
 }
 
