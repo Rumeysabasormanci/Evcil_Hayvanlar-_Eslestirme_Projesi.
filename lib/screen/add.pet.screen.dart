@@ -1,5 +1,5 @@
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:rumeysa_21070690018_finish_project/hook/file.helper.dart';
 import 'package:rumeysa_21070690018_finish_project/hook/navigation.helper.dart';
 import 'package:rumeysa_21070690018_finish_project/models/advert.dart';
 import '../components/bottom.bar.dart';
@@ -23,6 +23,7 @@ class AddPetScreenState extends State<AddPetScreen> {
   String? _gender;
   String? _bio;
   String? _phone;
+  String? _imageBase64;
 
   void _submitForm(context) async {
     if (_formKey.currentState!.validate()) {
@@ -43,6 +44,7 @@ class AddPetScreenState extends State<AddPetScreen> {
         genus: _genus!,
         gender: _gender!,
         phone: _phone!,
+        image: _imageBase64!,
       );
 
       await Advert.addAdvert(item);
@@ -51,13 +53,12 @@ class AddPetScreenState extends State<AddPetScreen> {
   }
 
   void selectImage() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles();
+    pickAndConvertToBase64().then((value) {
 
-    if (result != null) {
-      //File file = File(result.files.single.path);
-    } else {
-      // User canceled the picker
-    }
+      setState(() {
+        _imageBase64 = value!;
+      });
+    });
   }
 
   @override
@@ -81,14 +82,17 @@ class AddPetScreenState extends State<AddPetScreen> {
                 child: Column(
                   children: [
                     SizedBox(
-                        height: 90,
-                        width: 90,
+                        height: 280,
+                        width: double.infinity,
                         child: ElevatedButton(
                             onPressed: selectImage,
-                            child: const Icon(
-                              Icons.image,
-                              size: 50,
-                            ))),
+                            child: (_imageBase64 != null) ?  SizedBox(
+                              width: double.infinity,
+                              height: double.infinity,
+                              child: showBase64Image(_imageBase64!),
+                            ) : const Icon(Icons.image, size: 50)
+                        )
+                    ),
                     TextFormField(
                       decoration: const InputDecoration(labelText: 'İsim'),
                       validator: (value) {
@@ -168,7 +172,7 @@ class AddPetScreenState extends State<AddPetScreen> {
                       height: 50,
                       width: 180,
                       child: ElevatedButton(
-                        onPressed: ()=> _submitForm(context),
+                        onPressed: () => _submitForm(context),
                         child: Text(
                           'Paylaş',
                           style: TextStyle(fontSize: 20),

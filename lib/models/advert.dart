@@ -18,6 +18,7 @@ class Advert {
       "genus": item?.genus,
       "bio": item?.bio,
       "phone": item?.phone,
+      "image": item?.image,
     });
     return true;
   }
@@ -34,6 +35,7 @@ class Advert {
           gender: item['gender'],
           phone: item['phone'],
           genus: item['genus'],
+          image: item['image'],
           bio: item['bio']));
     });
     print(adverts);
@@ -45,14 +47,14 @@ class Advert {
       await db.collection('advert').delete();
 
       // example data
-     await db.collection('advert').doc().set({"name": "A", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-     await db.collection('advert').doc().set({"name": "B", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-     await db.collection('advert').doc().set({"name": "C", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-     await db.collection('advert').doc().set({"name": "D", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-     await db.collection('advert').doc().set({"name": "E", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-     await db.collection('advert').doc().set({"name": "F", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-     await db.collection('advert').doc().set({"name": "G", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-     await db.collection('advert').doc().set({"name": "J", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+     await db.collection('advert').doc().set({"name": "A", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": null});
+     await db.collection('advert').doc().set({"name": "B", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": null});
+     // await db.collection('advert').doc().set({"name": "C", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": ''});
+     // await db.collection('advert').doc().set({"name": "D", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": ''});
+     // await db.collection('advert').doc().set({"name": "E", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": ''});
+     // await db.collection('advert').doc().set({"name": "F", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": ''});
+     // await db.collection('advert').doc().set({"name": "G", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": ''});
+     // await db.collection('advert').doc().set({"name": "J", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": ''});
 
   }
 }
@@ -65,6 +67,7 @@ class AdvertItem {
   final String? gender;
   final String? genus;
   final String? bio;
+  final String? image;
 
   const AdvertItem({
     required this.name,
@@ -74,5 +77,6 @@ class AdvertItem {
     required this.gender,
     required this.genus,
     required this.bio,
+    required this.image,
   });
 }
