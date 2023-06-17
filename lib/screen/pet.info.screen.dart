@@ -1,4 +1,8 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:rumeysa_21070690018_finish_project/hook/file.helper.dart';
 import 'package:rumeysa_21070690018_finish_project/models/advert.dart';
 import '../components/bottom.bar.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -26,6 +30,10 @@ Future<void> _launchPhoneCall(String? phoneNumber) async {
 const listTextStyle = TextStyle(fontSize: 18, fontWeight: FontWeight.w500);
 
 class _petInfoScreenState extends State<petInfoScreen> {
+  List<int> imageBytes = (Advert.selectedAdvert?.image != null
+      ? base64Decode(Advert.selectedAdvert!.image!)
+      : [0]);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,12 +47,21 @@ class _petInfoScreenState extends State<petInfoScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Image(image: AssetImage('assets/kopus.jpeg'), height: 250, fit: BoxFit.cover),
+            // Image
+            (Advert.selectedAdvert?.image != null)
+                ? SizedBox(
+                    width: double.infinity,
+                    height: 250,
+                    child: Image.memory(Uint8List.fromList(imageBytes),
+                        fit: BoxFit.cover),
+                  )
+                : const Text(''),
             Center(
               child: Text(
-                Advert.selectedAdvert!.name! ,
+                Advert.selectedAdvert!.name!,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
               ),
             ),
             Container(
@@ -58,22 +75,47 @@ class _petInfoScreenState extends State<petInfoScreen> {
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
                   ),
                   ListTile(
-                    title: const Text("Yaş", style: listTextStyle,),
-                    subtitle: Text("${Advert.selectedAdvert?.age}", style: listTextStyle),
+                    title: const Text(
+                      "Yaş",
+                      style: listTextStyle,
+                    ),
+                    subtitle: Text("${Advert.selectedAdvert?.age}",
+                        style: listTextStyle),
                   ),
                   ListTile(
                     title: const Text("Kilo", style: listTextStyle),
-                    subtitle: Text("${Advert.selectedAdvert?.kilo}", style: listTextStyle,),
+                    subtitle: Text(
+                      "${Advert.selectedAdvert?.kilo}",
+                      style: listTextStyle,
+                    ),
                   ),
                   ListTile(
-                    title: const Text("Cins", style: listTextStyle,),
-                    subtitle: Text("${Advert.selectedAdvert?.genus}", style: listTextStyle),
+                    title: const Text(
+                      "Cins",
+                      style: listTextStyle,
+                    ),
+                    subtitle: Text("${Advert.selectedAdvert?.genus}",
+                        style: listTextStyle),
                   ),
-                  ListTile(title: const Text("Cinsiyet", style: listTextStyle,),
-                    subtitle: Text("${Advert.selectedAdvert?.gender}", style: listTextStyle,),
+                  ListTile(
+                    title: const Text(
+                      "Cinsiyet",
+                      style: listTextStyle,
+                    ),
+                    subtitle: Text(
+                      "${Advert.selectedAdvert?.gender}",
+                      style: listTextStyle,
+                    ),
                   ),
-                  ListTile(title: const Text("Hakkinda", style: listTextStyle,),
-                    subtitle: Text("${Advert.selectedAdvert?.bio}", style: listTextStyle,),
+                  ListTile(
+                    title: const Text(
+                      "Hakkinda",
+                      style: listTextStyle,
+                    ),
+                    subtitle: Text(
+                      "${Advert.selectedAdvert?.bio}",
+                      style: listTextStyle,
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: () {
