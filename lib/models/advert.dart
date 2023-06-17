@@ -45,14 +45,14 @@ class Advert {
       await db.collection('advert').delete();
 
       // example data
-      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
-      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+     await db.collection('advert').doc().set({"name": "A", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+     await db.collection('advert').doc().set({"name": "B", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+     await db.collection('advert').doc().set({"name": "C", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+     await db.collection('advert').doc().set({"name": "D", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+     await db.collection('advert').doc().set({"name": "E", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+     await db.collection('advert').doc().set({"name": "F", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+     await db.collection('advert').doc().set({"name": "G", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+     await db.collection('advert').doc().set({"name": "J", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
 
   }
 }
