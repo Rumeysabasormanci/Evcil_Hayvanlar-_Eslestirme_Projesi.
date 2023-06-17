@@ -43,6 +43,17 @@ class Advert {
 
   static void resetAdvert()  async {
       await db.collection('advert').delete();
+
+      // example data
+      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+      db.collection('advert').doc().set({"name": "da", "age": 10, "kilo": 50, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": 'assets/images/advert.png'});
+
   }
 }
 
