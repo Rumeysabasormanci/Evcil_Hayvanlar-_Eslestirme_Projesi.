@@ -1,27 +1,25 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+import 'package:rumeysa_21070690018_finish_project/models/advert.dart';
 import '../components/bottom.bar.dart';
-import '../components/card.advert.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class petInfoScreen extends StatefulWidget {
-  const petInfoScreen(
-      {super.key,
-      required this.title,
-      required this.Age,
-      required this.Kilo,
-      required this.Genus,
-      required this.Gender,
-      required this.About});
-
+  const petInfoScreen({super.key, required this.title});
   final String title;
-  final int? Age;
-  final double? Kilo;
-  final String Genus;
-  final String Gender;
-  final String About;
+
   @override
   State<petInfoScreen> createState() => _petInfoScreenState();
+}
+
+Future<void> _launchPhoneCall(String? phoneNumber) async {
+  print(phoneNumber);
+
+  var url = Uri(host: phoneNumber, scheme: 'tel');
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Arama başlatılamadı: $url';
+  }
 }
 
 class _petInfoScreenState extends State<petInfoScreen> {
@@ -59,27 +57,29 @@ class _petInfoScreenState extends State<petInfoScreen> {
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
                   ),
                   Text(
-                    "Yaş: ${widget.Age}",
+                    "Yaş: ${Advert.selectedAdvert?.name}",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    "Kilo: ${widget.Kilo}",
+                    "Kilo: ${Advert.selectedAdvert?.kilo}",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    "Cins: ${widget.Genus}",
+                    "Cins: ${Advert.selectedAdvert?.genus}",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    "Cinsiyet: ${widget.Gender}",
+                    "Cinsiyet: ${Advert.selectedAdvert?.gender}",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    "Hakkında: ${widget.About}",
+                    "Hakkında: ${Advert.selectedAdvert?.bio}",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                   ),
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _launchPhoneCall(Advert.selectedAdvert?.phone);
+                      },
                       style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20))),

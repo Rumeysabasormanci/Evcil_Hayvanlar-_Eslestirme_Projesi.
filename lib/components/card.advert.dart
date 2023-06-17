@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:rumeysa_21070690018_finish_project/hook/navigation.helper.dart';
+import 'package:rumeysa_21070690018_finish_project/models/advert.dart';
 
 const ts= TextStyle(fontSize: 16, fontWeight: FontWeight.bold);
-InkWell cardAdvert (BuildContext context,String name, int age, String type, String sex ){
+InkWell cardAdvert (BuildContext context, AdvertItem? item){
 
   return InkWell(
     splashColor: Colors.blue.withAlpha(30),
     onTap: () {
       debugPrint('Card tapped.');
+      Advert.selectedAdvert = item;
       goPage(context, "pet");
     },
     child: Container(
@@ -25,13 +27,13 @@ InkWell cardAdvert (BuildContext context,String name, int age, String type, Stri
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Ad: $name", style: ts),
-                SizedBox(height: 10),
-                Text("Yaş: $age", style: ts),
-                SizedBox(height: 10),
-                Text("Cins: $type", style: ts),
-                SizedBox(height: 10),
-                Text("Cinsiyet: $sex", style: ts),
+                Text("Ad: ${item?.name}", style: ts),
+                const SizedBox(height: 10),
+                Text("Yaş: ${item?.age}", style: ts),
+                const SizedBox(height: 10),
+                Text("Cins: ${item?.genus}", style: ts),
+                const SizedBox(height: 10),
+                Text("Cinsiyet: ${item?.gender}", style: ts),
               ],
             ),
           ),

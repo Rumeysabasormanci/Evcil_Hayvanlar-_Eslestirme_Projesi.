@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import '../hook/navigation.helper.dart';
+import 'package:line_icons/line_icons.dart';
 
-
-Container bottomBar (BuildContext context){
+Container bottomBar(BuildContext context) {
   return Container(
-    height: 50,
-    color: Color(0xffFB94BB),
+    height: 55,
+    color: const Color(0xffFB94BB),
     child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
       ElevatedButton(
-          onPressed: () => goPage(context,"login"),
-          child: Icon(Icons.login)),
+          onPressed: () => goPage(context, "home"),
+          child: const Icon(LineIcons.home)),
       ElevatedButton(
-          onPressed: () => goPage(context,""), child: Icon(Icons.home)),
+          onPressed: () => goPage(context, "advert"),
+          child: const Icon(LineIcons.paw)),
       ElevatedButton(
-          onPressed: () => goPage(context,"add"),
-          child: Icon(Icons.add_box_outlined)),
+          onPressed: () => goPage(context, "add"),
+          child: const Icon(LineIcons.plusCircle)),
       ElevatedButton(
-          onPressed: () => goPage(context, "pet"),
-          child: Icon(Icons.account_circle_rounded)),
+          onPressed: () => goPage(context, "profile"),
+          child: const Icon(LineIcons.user)),
     ]),
   );
 }
