@@ -11,13 +11,13 @@ class Advert {
     // save the item
     db.collection('advert').doc(id).set({
       "email": Auth.user?.email,
-      "name": item.name,
-      "age": item.age,
-      "kilo": item.kilo,
-      "gender": item.gender,
-      "genus": item.genus,
-      "bio": item.bio,
-      "phone": item.phone,
+      "name": item?.name,
+      "age": item?.age,
+      "kilo": item?.kilo,
+      "gender": item?.gender,
+      "genus": item?.genus,
+      "bio": item?.bio,
+      "phone": item?.phone,
     });
     return true;
   }
