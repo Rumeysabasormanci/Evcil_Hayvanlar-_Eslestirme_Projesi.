@@ -40,11 +40,9 @@ class _petInfoScreenState extends State<petInfoScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Image(image: AssetImage('assets/kopus.jpeg'), height: 250, fit: BoxFit.cover),
-
-
-            const Center(
+            Center(
               child: Text(
-                "ALEX",
+                Advert.selectedAdvert!.name! ,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
               ),
