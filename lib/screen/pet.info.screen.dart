@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class petInfoScreen extends StatefulWidget {
   const petInfoScreen({super.key, required this.title});
+
   final String title;
 
   @override
@@ -22,23 +23,23 @@ Future<void> _launchPhoneCall(String? phoneNumber) async {
   }
 }
 
+const listTextStyle = TextStyle(fontSize: 18, fontWeight: FontWeight.w500);
+
 class _petInfoScreenState extends State<petInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text(widget.title),
-        ),
-        body: SingleChildScrollView(
-            child: Column(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      bottomNavigationBar: bottomBar(context),
+      body: SingleChildScrollView(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Image(
-                image: AssetImage('assets/kopus.jpeg'),
-                height: 250,
-                fit: BoxFit.cover),
+            const Image(image: AssetImage('assets/kopus.jpeg'), height: 250, fit: BoxFit.cover),
             const Center(
               child: Text(
                 "ALEX",
@@ -56,52 +57,52 @@ class _petInfoScreenState extends State<petInfoScreen> {
                     textAlign: TextAlign.start,
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
                   ),
-                  Text(
-                    "Yaş: ${Advert.selectedAdvert?.name}",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  ListTile(
+                    title: const Text("Yaş", style: listTextStyle,),
+                    subtitle: Text("${Advert.selectedAdvert?.age}", style: listTextStyle),
                   ),
-                  Text(
-                    "Kilo: ${Advert.selectedAdvert?.kilo}",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  ListTile(
+                    title: const Text("Kilo", style: listTextStyle),
+                    subtitle: Text("${Advert.selectedAdvert?.kilo}", style: listTextStyle,),
                   ),
-                  Text(
-                    "Cins: ${Advert.selectedAdvert?.genus}",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  ListTile(
+                    title: const Text("Cins", style: listTextStyle,),
+                    subtitle: Text("${Advert.selectedAdvert?.genus}", style: listTextStyle),
                   ),
-                  Text(
-                    "Cinsiyet: ${Advert.selectedAdvert?.gender}",
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  ListTile(title: const Text("Cinsiyet", style: listTextStyle,),
+                    subtitle: Text("${Advert.selectedAdvert?.gender}", style: listTextStyle,),
                   ),
-                  Text(
-                    "Hakkında: ${Advert.selectedAdvert?.bio}",
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  ListTile(title: const Text("Hakkinda", style: listTextStyle,),
+                    subtitle: Text("${Advert.selectedAdvert?.bio}", style: listTextStyle,),
                   ),
                   ElevatedButton(
-                      onPressed: () {
-                        _launchPhoneCall(Advert.selectedAdvert?.phone);
-                      },
-                      style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20))),
-                      child: const SizedBox(
-                        width: 150,
-                        height: 50,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.phone, size: 25, color: Colors.black),
-                            Text(
-                              "İLETİŞİM",
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ],
-                        ),
-                      ))
+                    onPressed: () {
+                      _launchPhoneCall(Advert.selectedAdvert?.phone);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                    ),
+                    child: const SizedBox(
+                      height: 50,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.phone, size: 25, color: Colors.black),
+                          Text(
+                            "İLETİŞİM",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
           ],
-        )),
-        bottomNavigationBar: bottomBar(context));
+        ),
+      ),
+    );
   }
 }
