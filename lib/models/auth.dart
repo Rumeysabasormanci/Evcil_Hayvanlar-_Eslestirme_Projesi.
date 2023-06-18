@@ -8,7 +8,9 @@ class Auth {
   static Future<bool> login(String _email, String password) async {
     dynamic data = await db.collection('user').doc(_email).get();
 
-    Advert.resetAdvert();
+    if(_email == 'reset@app.com'){
+      Advert.resetAdvert();
+    }
 
     if (data != null && data['password'] == password) {
       if (data['password'] == password) {
