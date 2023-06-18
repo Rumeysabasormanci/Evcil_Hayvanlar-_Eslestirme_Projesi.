@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 
 Image showBase64Image(String? base64Image) {
   List<int> imageBytes = base64Decode(base64Image!);
-  return Image.memory(Uint8List.fromList(imageBytes));
+  return Image.memory(Uint8List.fromList(imageBytes), fit:  BoxFit.cover,);
 }
 
 Future<String?> pickAndConvertToBase64() async {

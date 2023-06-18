@@ -21,14 +21,14 @@ InkWell cardAdvert(BuildContext context, AdvertItem? item) {
       child: Row(
         children: [
           ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: (item?.image != null)
-                  ? SizedBox(
-                      width: 120,
-                      height: 120,
-                      child: showBase64Image(item?.image),
-                    )
-                  : const Icon(Icons.image, size: 120)),
+            borderRadius: BorderRadius.circular(10),
+            child: SizedBox(
+                width: 170,
+                height: 110,
+                child: (item?.image != null)
+                    ? showBase64Image(item?.image)
+                    : const Icon(Icons.image, size: 100)),
+          ),
           const SizedBox(width: 20),
           Expanded(
             child: Column(
