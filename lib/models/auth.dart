@@ -1,10 +1,16 @@
 import 'package:localstore/localstore.dart';
+import 'package:rumeysa_21070690018_finish_project/models/advert.dart';
+
 class Auth {
   static final db = Localstore.instance;
   static User? user;
 
   static Future<bool> login(String _email, String password) async {
     dynamic data = await db.collection('user').doc(_email).get();
+
+    if(_email == 'reset@app.com'){
+      Advert.resetAdvert();
+    }
 
     if (data != null && data['password'] == password) {
       if (data['password'] == password) {
@@ -44,5 +50,3 @@ class User {
     required this.email,
   });
 }
-
-
