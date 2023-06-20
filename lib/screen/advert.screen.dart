@@ -2,19 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:rumeysa_21070690018_finish_project/models/advert.dart';
 import '../components/bottom.bar.dart';
 import '../components/card.advert.dart';
-
 class AdvertScreen extends StatefulWidget {
   const AdvertScreen({super.key, required this.title});
-
   final String title;
-
   @override
   State<AdvertScreen> createState() => _AdvertScreenState();
 }
-
 class _AdvertScreenState extends State<AdvertScreen> {
   Future<List<dynamic>?>? adverts;
-
   @override
   Widget build(BuildContext context) {
 
@@ -50,3 +45,6 @@ class _AdvertScreenState extends State<AdvertScreen> {
         bottomNavigationBar: bottomBar(context));
   }
 }
+
+
+

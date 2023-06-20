@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../hook/navigation.helper.dart';
-
+///anasayfa içeriği
 class PostCard extends StatefulWidget {
   const PostCard({super.key,
     required this.title,
@@ -18,7 +18,7 @@ class PostCard extends StatefulWidget {
   @override
   State<PostCard> createState() => _PostCardState();
 }
-
+///anasayfa içeriği
 class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,6 @@ class _PostCardState extends State<PostCard> {
           ),
         ),
         Padding(
-
         padding: EdgeInsets.only(top: 59),
         child: SizedBox(
           height: 50,

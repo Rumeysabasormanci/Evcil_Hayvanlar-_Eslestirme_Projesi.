@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../hook/navigation.helper.dart';
 import 'package:line_icons/line_icons.dart';
-
+///burada butonlara basıldığında sayfa yönlendirmesi gerçekleşiyor
 Container bottomBar(BuildContext context) {
   return Container(
     height: 55,
@@ -22,3 +22,4 @@ Container bottomBar(BuildContext context) {
     ]),
   );
 }
+

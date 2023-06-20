@@ -1,5 +1,4 @@
 import 'package:localstore/localstore.dart';
-
 class Auth {
   static final db = Localstore.instance;
   static User? user;
@@ -45,3 +44,5 @@ class User {
     required this.email,
   });
 }
+
+

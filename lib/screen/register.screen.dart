@@ -5,9 +5,7 @@ import 'package:rumeysa_21070690018_finish_project/models/auth.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key, required this.title});
-
   final String title;
-
   @override
   State<RegisterScreen> createState() => RegisterScreenState();
 }

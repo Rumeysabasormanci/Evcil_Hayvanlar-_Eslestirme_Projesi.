@@ -1,10 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:localstore/localstore.dart';
 import 'package:rumeysa_21070690018_finish_project/models/auth.dart';
-
 class Advert {
   static final db = Localstore.instance;
   static AdvertItem? selectedAdvert;
-
   static Future<bool> addAdvert(AdvertItem item) async {
     // gets new id
     final id = db.collection('advert').doc().id;
@@ -22,7 +21,6 @@ class Advert {
     });
     return true;
   }
-
   static Future<List<AdvertItem>> getAdverts() async {
     final querySnapshot = await db.collection('advert').get();
     final List<AdvertItem> adverts = [];
@@ -42,12 +40,10 @@ class Advert {
 
     return adverts;
   }
-
   static void resetAdvert()  async {
-      await db.collection('advert').delete();
-
+     await db.collection('advert').delete();
       // example data
-     await db.collection('advert').doc().set({"name": "A", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": null});
+     await db.collection('advert').doc().set({"name": "LİNA", "age": 2, "kilo": 8, "gender": "Dişi", "phone": "5522492323", "genus": "British Shorthair", "bio": "Uysal,neşeli,yabancılık çekmez", "image": AssetImage('assets/british.jpeg')});
      await db.collection('advert').doc().set({"name": "B", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": null});
      // await db.collection('advert').doc().set({"name": "C", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": ''});
      // await db.collection('advert').doc().set({"name": "D", "age": 10, "kilo": 50.0, "gender": "wa", "phone": "WA", "genus": "wAD", "bio": "DWA", "image": ''});
@@ -58,7 +54,6 @@ class Advert {
 
   }
 }
-
 class AdvertItem {
   final String? name;
   final String? phone;

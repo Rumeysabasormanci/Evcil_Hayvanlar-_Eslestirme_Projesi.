@@ -2,9 +2,10 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:file_picker/file_picker.dart';
-
 import 'package:flutter/cupertino.dart';
 
+/// resim dosyası seçme işlemi ve seçilen dosyanın base64-
+/// formatına dönüştürülmesi gibi işlevleri sağlar
 Image showBase64Image(String? base64Image) {
   List<int> imageBytes = base64Decode(base64Image!);
   return Image.memory(Uint8List.fromList(imageBytes));
@@ -27,3 +28,4 @@ Future<String?> pickAndConvertToBase64() async {
 
   return null;
 }
+

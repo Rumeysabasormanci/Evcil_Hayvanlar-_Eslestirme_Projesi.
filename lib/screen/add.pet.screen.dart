@@ -3,16 +3,12 @@ import 'package:rumeysa_21070690018_finish_project/hook/file.helper.dart';
 import 'package:rumeysa_21070690018_finish_project/hook/navigation.helper.dart';
 import 'package:rumeysa_21070690018_finish_project/models/advert.dart';
 import '../components/bottom.bar.dart';
-
 class AddPetScreen extends StatefulWidget {
   const AddPetScreen({super.key, required this.title});
-
   final String title;
-
   @override
   State<AddPetScreen> createState() => AddPetScreenState();
 }
-
 class AddPetScreenState extends State<AddPetScreen> {
   final _formKey = GlobalKey<FormState>();
 
@@ -51,7 +47,6 @@ class AddPetScreenState extends State<AddPetScreen> {
       goPage(context, 'advert');
     }
   }
-
   void selectImage() async {
     pickAndConvertToBase64().then((value) {
 
@@ -60,7 +55,6 @@ class AddPetScreenState extends State<AddPetScreen> {
       });
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -173,7 +167,7 @@ class AddPetScreenState extends State<AddPetScreen> {
                       width: 180,
                       child: ElevatedButton(
                         onPressed: () => _submitForm(context),
-                        child: Text(
+                        child: const Text(
                           'Paylaş',
                           style: TextStyle(fontSize: 20),
                         ),

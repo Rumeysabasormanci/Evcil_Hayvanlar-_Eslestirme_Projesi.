@@ -1,5 +1,4 @@
 import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:rumeysa_21070690018_finish_project/hook/navigation.helper.dart';
 import 'package:rumeysa_21070690018_finish_project/models/advert.dart';
@@ -9,15 +8,12 @@ import '../components/card.advert.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key, required this.title});
-
   final String title;
-
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
 const listTextStyle = TextStyle(fontSize: 18, fontWeight: FontWeight.w500);
-
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:rumeysa_21070690018_finish_project/hook/file.helper.dart';
 import 'package:rumeysa_21070690018_finish_project/models/advert.dart';
@@ -28,13 +27,13 @@ Future<void> _launchPhoneCall(String? phoneNumber) async {
 }
 
 const listTextStyle = TextStyle(fontSize: 18, fontWeight: FontWeight.w500);
-
 class _petInfoScreenState extends State<petInfoScreen> {
   List<int> imageBytes = (Advert.selectedAdvert?.image != null
       ? base64Decode(Advert.selectedAdvert!.image!)
       : [0]);
-
   @override
+
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

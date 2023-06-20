@@ -17,14 +17,24 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body:  const Center(
-        child: Column(
-          children: [
-            PostCard(age: "5", sex: "tras", weight: "eadw", title: "dea", image: "dwdaw"),
-          ],
-        )
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/login5.jpeg"), // Arka plan fotoğrafının yolunu belirtin
+            fit: BoxFit.cover, // Fotoğrafın boyutunu uygun şekilde ayarlar
+          ),
+        ),
+        child: const Center(
+          child: Column(
+            children: [
+              PostCard(age: "5", sex: "tras", weight: "eadw", title: "dea", image: "dwdaw"),
+            ],
+          ),
+        ),
       ),
-      bottomNavigationBar: bottomBar(context)
+      bottomNavigationBar: bottomBar(context),
     );
   }
 }
+
+

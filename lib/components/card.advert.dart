@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:rumeysa_21070690018_finish_project/hook/file.helper.dart';
 import 'package:rumeysa_21070690018_finish_project/hook/navigation.helper.dart';
 import 'package:rumeysa_21070690018_finish_project/models/advert.dart';
-
+///kart düzenlemeleri
 const ts = TextStyle(fontSize: 16, fontWeight: FontWeight.bold);
-
 InkWell cardAdvert(BuildContext context, AdvertItem? item) {
   return InkWell(
     splashColor: Colors.blue.withAlpha(30),
@@ -49,5 +48,6 @@ InkWell cardAdvert(BuildContext context, AdvertItem? item) {
     ),
   );
 }
+
 
 // Image(image: AssetImage('assets/kopus.jpeg'),  height: 120)),
